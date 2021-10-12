@@ -4,8 +4,8 @@ from tensorflow.keras.layers import Layer, Dense
 
 
 class DenseNormal(Layer):
-    def __init__(self, units):
-        super(DenseNormal, self).__init__()
+    def __init__(self, units,**kwargs):
+        super(DenseNormal, self).__init__(**kwargs)
         self.units = int(units)
         self.dense = Dense(2 * self.units)
 
@@ -25,8 +25,8 @@ class DenseNormal(Layer):
 
 
 class DenseNormalGamma(Layer):
-    def __init__(self, units):
-        super(DenseNormalGamma, self).__init__()
+    def __init__(self, units,**kwargs):
+        super(DenseNormalGamma, self).__init__(**kwargs)
         self.units = int(units)
         self.dense = Dense(4 * self.units, activation=None)
 
@@ -52,8 +52,8 @@ class DenseNormalGamma(Layer):
 
 
 class DenseDirichlet(Layer):
-    def __init__(self, units):
-        super(DenseDirichlet, self).__init__()
+    def __init__(self, units,**kwargs):
+        super(DenseDirichlet, self).__init__(**kwargs)
         self.units = int(units)
         self.dense = Dense(int(units))
 
@@ -69,8 +69,8 @@ class DenseDirichlet(Layer):
 
 
 class DenseSigmoid(Layer):
-    def __init__(self, units):
-        super(DenseSigmoid, self).__init__()
+    def __init__(self, units,**kwargs):
+        super(DenseSigmoid, self).__init__(**kwargs)
         self.units = int(units)
         self.dense = Dense(int(units))
 
