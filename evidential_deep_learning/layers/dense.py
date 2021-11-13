@@ -28,7 +28,9 @@ class DenseNormalGamma(Layer):
     def __init__(self, units,**kwargs):
         super(DenseNormalGamma, self).__init__(**kwargs)
         self.units = int(units)
-        self.dense = Dense(4 * self.units, activation=None)
+        # self.dense = Dense(4 * self.units, activation=None)
+        self.dense = Dense(4 * self.units,activation='sigmoid',kernel_initializer=tf.initializers.zeros())
+
 
     def evidence(self, x):
         # return tf.exp(x)
