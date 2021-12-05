@@ -25,11 +25,11 @@ class DenseNormal(Layer):
 
 
 class DenseNormalGamma(Layer):
-    def __init__(self, units,activation=None,activity_regularizer=None,**kwargs):
+    def __init__(self, units,activation=None,kernel_initializer=None,**kwargs):
         super(DenseNormalGamma, self).__init__(**kwargs)
         self.units = int(units)
         # self.dense = Dense(4 * self.units, activation=None)
-        self.dense = Dense(4 * self.units,activation=activation,activity_regularizer=activity_regularizer)
+        self.dense = Dense(4 * self.units,activation=activation,kernel_initializer=kernel_initializer)
 
 
     def evidence(self, x):
