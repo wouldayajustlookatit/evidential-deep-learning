@@ -29,7 +29,7 @@ class DenseNormalGamma(Layer):
         super(DenseNormalGamma, self).__init__(**kwargs)
         self.units = int(units)
         # self.dense = Dense(4 * self.units, activation=None)
-        self.dense = Dense(4 * self.units,activation=activation)
+        self.dense = Dense(4 * self.units,activation=activation,**kwargs)
 
 
     def evidence(self, x):
